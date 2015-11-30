@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeUpload", "YouTubeUpload\YouTubeUpload.csproj", "{724D60FC-0BF1-477B-9E8D-98274BC14525}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Local|Any CPU = Local|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Stage|Any CPU = Stage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Local|Any CPU.Build.0 = Local|Any CPU
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Stage|Any CPU.ActiveCfg = Stage|Any CPU
+		{724D60FC-0BF1-477B-9E8D-98274BC14525}.Stage|Any CPU.Build.0 = Stage|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
