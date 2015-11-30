@@ -1,14 +1,10 @@
 ﻿
 $(document).ready(function () {
     $(document).on("click", "#btnVedioSubmit", uploadMetaDataYouTube);
-
 });
 
 var uploadMetaDataYouTube = function () {
-
     beginFileUpload();
-
-    var lectureId = 144;
     var formData = new FormData();
     var totalFiles = document.getElementById("flyupdVideo").files.length;
 
@@ -19,7 +15,7 @@ var uploadMetaDataYouTube = function () {
 
     jqxhr = $.ajax({
         async: true,
-        url: ('/YouTube/YouTubeUpload?lectureId=' + lectureId),
+        url: ('/YouTube/YouTubeUpload'),
         data: formData,
         cache: false,
         contentType: false,
@@ -36,28 +32,6 @@ var uploadMetaDataYouTube = function () {
         return;
     });
 }
-
-//function beginFileUpload() {
-//    var url = "/YouTube/GetYouTubeUploadingStatus";
-//    $.get(url)
-//    .done(function (result) {
-//        if (result.statusMessage !== 'Completed') {
-
-//            $("#progressBar").progressbar({ value: parseInt(result.totalSent) }, { max: parseInt(result.totalSize) });
-
-//            var message = result.statusMessage + ". File Uploaded " + result.totalSize + "/" + result.totalSent;
-//            $("#statusMessage").text(message);
-
-//            console.log(message);
-//            beginFileUpload();
-//        }
-//    })
-//    .fail(function () {
-//        console.log("Unable to get YouTube uploading status.");
-//    });
-//}
-
-
 
 function beginFileUpload() {
     var handle;

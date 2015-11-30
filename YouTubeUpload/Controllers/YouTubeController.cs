@@ -21,7 +21,7 @@ namespace EmptyWebForm.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public async Task<JsonResult> YouTubeUpload(string lectureId)
+        public async Task<JsonResult> YouTubeUpload()
         {
             for (int i = 0; i < Request.Files.Count; i++)
             {
@@ -69,15 +69,19 @@ namespace EmptyWebForm.Controllers
             switch (progress.Status)
             {
                 case UploadStatus.Starting:
+                    Debug.WriteLine("Starting");
                     new Task(() => { UpdateUIAsync(progress, "starting"); }).Start();
                     break;
                 case UploadStatus.Uploading:
+                    Debug.WriteLine(progress.BytesSent + " bytes sent. Please wait.");
                     new Task(() => { UpdateUIAsync(progress, "uploading"); }).Start();
                     break;
                 case UploadStatus.Completed:
+                    Debug.WriteLine("Upload completed on YouTube.");
                     new Task(() => { UpdateUIAsync(progress, "completed"); }).Start();
                     break;
                 case UploadStatus.Failed:
+                    Debug.WriteLine("An error prevented the upload from completing.\n" + progress.Exception);
                     new Task(() => { UpdateUIAsync(progress, "failed"); }).Start();
                     break;
             }
@@ -119,6 +123,7 @@ namespace EmptyWebForm.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.InnerException);
                 return null;
             }
         }
@@ -161,6 +166,7 @@ namespace EmptyWebForm.Controllers
         [HttpGet]
         public JsonResult GetYouTubeUploadingStatus()
         {
+            Debug.WriteLine("Ajax call received...");
             return Json(new { statusMessage = statusMessage, totalSent = totalSent, totalSize = totalSize }, JsonRequestBehavior.AllowGet);
         }
     }
